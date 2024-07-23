@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <img src="assets/woman.png">
+       <h2>ASK ME A QUESTION</h2>
+       <input type="text" value="Type something...." id="input1"><br>
+       <button id="accept">ACCEPT</button><button id="decline">DECLINE</button>
+    </div>
+
+    <script>
+        var Questions = [
+    "What is your name?",
+    "Where do you live?",
+    "What is your favorite color?",
+    "What is your hobby?",
+     "What is your favorite movie?",
+    "What is your favorite book?",
+    "What is your favorite song?"
+];
+
+document.getElementById('accept').addEventListener('click', function() {
+    var question = document.getElementById('input1').value;
+    if (question) 
+    {
+        if (Questions.includes(question))
+        {
+            alert(' Your question is accepted.');
+        } 
+        else 
+        {
+            alert('Your question is not in the predefined list.');
+        }
+    } 
+    else 
+    {
+        alert('Please type a question.');
+    }
+});
+
+document.getElementById('decline').addEventListener('click', function() {
+    document.getElementById('input1').value = '';
+    alert('Input cleared.');
+});
+
+
+        
+    
+    </script>
+</body>
+</html>
